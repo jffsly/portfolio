@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jepoy</title>
+    <link rel="icon" href="assets/letter-j.png" type="image/png">
+    <link href="https://fonts.googleapis.com/css2?family=Geist&display=swap" rel="stylesheet">
+
+    <!-- CSS BOOTSTRAP LINK -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+
+    <?php include('inc/navbar.php'); ?>
+
+</head>
+
+<style>
+    .homePage{
+        margin: 6rem 0;
+    }
+
+    #copyText {
+        font-size: 2rem; /* Default size */
+    }
+
+    @media (max-width: 992px) { /* Medium screens */
+        #copyText {
+            font-size: 1.75rem;
+        }
+    }
+
+    @media (max-width: 768px) { /* Small screens */
+        #copyText {
+            font-size: 1.5rem;
+        }
+    }
+
+    @media (max-width: 576px) { /* Extra small screens */
+        #copyText {
+            font-size: 1.250rem;
+        }
+    }
+</style>
+
+<script>
+    function copyText() {
+      // Get the text element
+      var textElement = document.getElementById("copyText");
+      var text = textElement.innerText;
+      
+      // Create a temporary input element to copy the text
+      var tempInput = document.createElement("input");
+      tempInput.value = text;
+      document.body.appendChild(tempInput);
+      tempInput.select();
+      document.execCommand("copy");
+      document.body.removeChild(tempInput);
+      
+      // Change the text to "Email Copied"
+      textElement.innerText = "Email Copied";
+    }
+  </script>
+
+
+<body style="padding:2% 7%;">
+
+    <div class="col homePage">
+        <h1>Passionate About Coding, <br>Driven to Become a Proficient Web Developer.</h1>
+    </div>
+    
+    <div class="col homePage">
+        <p>Get in touch <span style="color:gray;">(Click to copy)</span></p>
+        <p id="copyText" onclick="copyText()" style="cursor:pointer; color:#000;">
+            <b>jffslyyy@gmail.com</b>
+        </p>
+    </div>
+
+    <?php include('inc/footer.php'); ?>
+    <!-- JS BOOTSTRAP LINK -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+</body>
+</html>
+
