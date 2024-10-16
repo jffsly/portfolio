@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jepoy</title>
+    <link rel="icon" href="assets/letter-j.png" type="image/png">
+    <link href="https://fonts.googleapis.com/css2?family=Geist&display=swap" rel="stylesheet">
+    <!-- CSS BOOTSTRAP LINK -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="inc/styles.css">
+
+</head>
+
+<nav class="navbar">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="index.html">Jeff Solayao</a>
+        <ul class="navbar-nav d-flex flex-row">
+            <li class="nav-item" style="margin: 0 25% 0 -25%;">
+                <a class="nav-link" href="#aboutMe">About</a>
+            </li>
+        </ul>
+  </div>
+</nav>
+
+<script
+  src="https://code.jquery.com/jquery-3.7.1.js"
+  integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4="
+  crossorigin="anonymous">
+</script>
+
+<script tpye="text/javascript">
+    $(document).ready(function(){
+        $('.list').click(function(){
+            const value = $(this).attr('data-filter');
+            if(value =='All'){
+                $('.itemBox').show('1000');
+            } else{
+                $('.itemBox').not('.'+value).hide('1000');
+                $('.itemBox').filter('.'+value).show('1000');
+            }
+        })
+
+            $('.list').click(function(){
+            $(this).addClass('active').siblings().removeClass('active');
+        })
+    })
+
+</script>
+
+<script>
+    function copyText() {
+      // Get the text element
+      var textElement = document.getElementById("copyText");
+      var text = textElement.innerText;
+      
+      // Create a temporary input element to copy the text
+      var tempInput = document.createElement("input");
+      tempInput.value = text;
+      document.body.appendChild(tempInput);
+      tempInput.select();
+      document.execCommand("copy");
+      document.body.removeChild(tempInput);
+      
+      // Change the text to "Email Copied"
+      textElement.innerText = "Email Copied";
+    }
+</script>
+
+
+<body style="padding:2% 7%;">
+
+    <!-- LANDING PAGE -->
+    <div class="landingPage">
+        <div class="col homePage">
+            <h1><b>Passionate About Coding, <br>Driven to Become a Proficient Web Developer.</b></h1>
+        </div>
+        
+        <div class="col homePage">
+            <p>Get in touch <span style="color:gray;">(Click to copy)</span></p>
+            <p id="copyText" onclick="copyText()" style="cursor:pointer; color:#000;">
+                <b>jffslyyy@gmail.com</b>
+            </p>
+        </div>
+    </div>
+    <!-- END OF LANDING PAGE -->
+
+    <!-- PROJECTS SECTION -->
+
+    <section>
+        <ul>
+            <li class="list active" data-filter="All">All</li>
+            <li class="list" data-filter="experience">Experience</li>
+            <li class="list" data-filter="projects">Projects</li>
+        </ul>
+
+        <div class="projects">
+            <!-- EXPERIENCE TAB -->
+            <div class="itemBox experience" type="button" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                <img src="assets/gtis.jfif" alt="">
+            </div>
+            <div class="itemBox experience">
+                <img src="assets/zeus.jpg" alt="">
+            </div>
+            <!-- END OF EXPERIENCE TAB -->
+
+            <!-- PROJECTS TAB -->
+            <div class="itemBox projects">
+                <img src="assets/sara.png" alt="">
+            </div>
+            <!-- END OF PROJECTS TAB -->
+
+        </div>
+    </section>
+
+    <!-- MODAL FOR GTIS -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                ...
+                </div>
+                <div class="modal-footer">
+                    <div class="me-auto">
+                        <span class="badge text-bg-dark me-2">Skill 1</span>
+                        <span class="badge text-bg-dark me-2">Skill 2</span>
+                        <span class="badge text-bg-dark">Skill 3</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- END OF MODAL FOR GTIS -->
+
+
+    <!-- END OF PROJECTS SECTION -->
+
+    <!-- ABOUT ME -->
+    <div class="row text-justify">
+        <div class="col-12 col-md-6">
+            <p class="aboutMe" id="aboutMe">
+                I am Jeff Solayao based in Makati City, a dedicated fresh IT graduate with a strong aspiration to become a
+                proficient web developer. My enthusiasm for coding and crafting
+                exceptional websites drives me forward. Proficient in PHP, Laravel,
+                CodeIgniter, MySQL, Bootstrap, HTML, CSS, JavaScript and Adobe XD; I am
+                committed to continuously enhancing my skills to deliver innovative and
+                impactful digital solutions.
+            </p>
+        </div>
+
+        <div class="col-12 col-md-6">
+            <div class="card mb-3 p-2">
+                <div class="row g-0">
+                  <div class="col">
+                    <div class="card-body">
+                      <h5 class="card-title">Technologies</h5>
+                      <div class="icon-container">
+                        <img class="imgTechs" src="assets/php.png" alt="PHP ICON">
+                        <img class="imgTechs" src="assets/html.png" alt="HTML ICON">
+                        <img class="imgTechs" src="assets/css-3.png" alt="CSS ICON">
+                        <img class="imgTechs" src="assets/java-script.png" alt="JS ICON">
+                        <img class="imgTechs" src="assets/mysql.png" alt="MYSQL ICON">
+                        <img class="imgTechs" src="assets/sql-server-icon.webp" alt="MICROSOFT SQL SERVER ICON">
+                    </div>
+                    </div>
+                  </div>
+                </div>
+            </div>
+
+            <div class="card mb-3 p-2">
+                <div class="row g-0">
+                  <div class="col-md-8">
+                    <div class="card-body">
+                      <h5 class="card-title">Frameworks</h5>
+                      <div class="icon-container">
+                        <img class="imgTechs" src="assets/laravel-icon.png" alt="Laravel ICON">
+                        <img class="imgTechs" src="assets/social.png" alt="CODEIGNITER ICON">
+                        <img class="imgTechs" src="assets/bootstrap.png" alt="BOOTSTRAP ICON">
+                      </div>
+                    </div>
+                  </div>
+                </div>
+            </div>
+
+            <div class="card mb-3 p-2">
+                <div class="row g-0">
+                  <div class="col-md-8">
+                    <div class="card-body">
+                      <h5 class="card-title">Tools</h5>
+                      <div class="icon-container">
+                        <img class="imgTechs" src="assets/vs-code.png" alt="VS CODE ICON">
+                        <img class="imgTechs" src="assets/vs.png" alt="VS ICON">
+                        <img class="imgTechs" src="assets/XAMPP.webp" alt="XAMPP ICON">
+                        <img class="imgTechs" src="assets/adobe-xd.png" alt="ADOBE XD ICON">
+                      </div>
+                    </div>
+                  </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- END OF ABOUT ME -->
+
+
+    <!-- FOOTER -->
+    <footer> 
+        <div class="iconCotainer">
+            <a href="https://www.linkedin.com/in/jffsly" target="_blank"><img src="assets/linkedin.png" alt="LINKEDIN ICON"></a>
+            <a href="https://github.com/jffsly" target="_blank"><img src="assets/github.png" alt="GITHUB ICON"></a> 
+            <a href="mailto:jffslyyy@gmail.com"><img src="assets/gmail.png" alt="GMAIL ICON"></a>
+            <a href="viber://chat?number=09217364247" target="_blank"><img src="assets/viber.png" alt="VIBER ICON"></a> 
+        </div>
+        
+        <p>© Jeff Solayao 2024</p>
+    </footer>
+    <!-- END OF FOOTER -->
+    <a style="color:white;" href="https://www.flaticon.com/free-icons/email" title="email icons">Email icons created by rukanicon - Flaticon</a>
+    <!-- JS BOOTSTRAP LINK -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+</body>
+</html>
+
